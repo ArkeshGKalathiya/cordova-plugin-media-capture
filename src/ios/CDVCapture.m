@@ -606,6 +606,9 @@
     UIStatusBarStyle _previousStatusBarStyle;
 }
 @end
+	
+@property (nonatomic, getter=isModalInPresentation) BOOL modalInPresentation;
+@end
 
 @implementation CDVAudioRecorderViewController
 @synthesize errorCode, callbackId, duration, captureCommand, doneButton, recordingView, recordButton, recordImage, stopRecordImage, timerLabel, avRecorder, avSession, pluginResult, timer, isTimed;
@@ -638,6 +641,11 @@
         self.errorCode = CAPTURE_NO_MEDIA_FILES;
         self.isTimed = self.duration != nil;
         _previousStatusBarStyle = [UIApplication sharedApplication].statusBarStyle;
+	    
+	if (@available(iOS 13, *)) {
+            self.modalInPresentation = YES;
+        }
+	    
 
         return self;
     }
