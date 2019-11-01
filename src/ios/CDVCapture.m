@@ -665,7 +665,7 @@
         microphoneResource = @"CDVCapture.bundle/microphone-568h";
     }
 
-    NSBundle* cdvBundle = [NSBundle bundleForClass:[CDVCapture class]];
+    NSBundle* cdvBundle = [NSBundle mainBundle];
     UIImage* microphone = [UIImage imageNamed:[self resolveImageResource:microphoneResource] inBundle:cdvBundle compatibleWithTraitCollection:nil];
     UIView* microphoneView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, viewRect.size.width, microphone.size.height)];
     [microphoneView setBackgroundColor:[UIColor colorWithPatternImage:microphone]];
