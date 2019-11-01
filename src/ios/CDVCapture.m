@@ -605,8 +605,6 @@
 @interface CDVAudioRecorderViewController () {
     UIStatusBarStyle _previousStatusBarStyle;
 }
-@end
-	
 @property (nonatomic, getter=isModalInPresentation) BOOL modalInPresentation;
 @end
 
